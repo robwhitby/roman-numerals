@@ -1,0 +1,1 @@
+./XQTest/lib/test-runner.sh -u http://localhost:8005/XQTest/lib/test-runner.xqy $*
