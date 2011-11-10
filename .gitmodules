@@ -1,0 +1,4 @@
+
+[submodule "XQTest"]
+	path = XQTest
+	url = git@github.com:robwhitby/XQTest.git
