@@ -1,5 +1,5 @@
 xquery version '1.0-ml';
-module namespace roman = 'http://xqueryhacker.com/roman-numerals';
+module namespace roman = 'http://github.com/robwhitby/roman-numerals';
 
 declare variable $romans := ('I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M');    
 declare variable $decimals := (1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000);

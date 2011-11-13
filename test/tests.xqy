@@ -2,7 +2,7 @@ xquery version '1.0-ml';
 module namespace test = 'http://github.com/robwhitby/xqtest/test';
 import module namespace assert = 'http://github.com/robwhitby/xqtest/assertions' at '/XQTest/src/assertions.xqy';
 
-import module namespace roman = 'http://xqueryhacker.com/roman-numerals' at '/roman-numerals.xqy';
+import module namespace roman = 'http://github.com/robwhitby/roman-numerals' at '/roman-numerals.xqy';
 
 
 declare function test:throw-error-for-invalid-roman-numerals() 
