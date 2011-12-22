@@ -1,7 +1,7 @@
-xquery version '1.0-ml';
-module namespace roman = 'http://github.com/robwhitby/roman-numerals';
+xquery version "1.0-ml";
+module namespace roman = "http://github.com/robwhitby/roman-numerals";
 
-declare variable $romans := ('I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M');    
+declare variable $romans := ("I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M");    
 declare variable $decimals := (1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000);
 
 declare function roman:to-integer($roman-numeral as xs:string) as xs:integer 
@@ -25,6 +25,7 @@ declare function roman:to-roman($int as xs:integer) as xs:string?
   else roman:recurse-int($int, (), fn:count($decimals))
 };
 
+
 declare private function roman:recurse-int($remainder as xs:int, $roman as xs:string?, $idx as xs:integer) as xs:string
 {
   if ($remainder eq 0) then $roman
@@ -32,5 +33,12 @@ declare private function roman:recurse-int($remainder as xs:int, $roman as xs:st
   else roman:recurse-int($remainder - $decimals[$idx], fn:concat($roman, $romans[$idx]), $idx)
 };
 
-declare private function roman:unsupported-integer() { fn:error(xs:QName("ROMAN-UNSUPPORTED-INTEGER"), "Integers outside the range 1 to 3999 are not supported") };
-declare private function roman:invalid-roman() { fn:error(xs:QName("ROMAN-INVALID-ROMAN-NUMERAL"), "Invalid roman numeral") };
+declare private function roman:unsupported-integer() 
+{ 
+  fn:error(xs:QName("ROMAN-UNSUPPORTED-INTEGER"), "Integers outside the range 1 to 3999 are not supported") 
+};
+
+declare private function roman:invalid-roman() 
+{ 
+  fn:error(xs:QName("ROMAN-INVALID-ROMAN-NUMERAL"), "Invalid roman numeral") 
+};
