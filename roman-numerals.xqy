@@ -1,4 +1,4 @@
-  xquery version "1.0-ml";
+xquery version "1.0-ml";
 module namespace roman = "http://github.com/robwhitby/roman-numerals";
 
 declare variable $romans := ("I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M");    
